@@ -1,4 +1,4 @@
-<img width="2866" height="1274" alt="image" src="https://github.com/user-attachments/assets/4b4defd5-663f-45d1-b9e3-f9adbcfabbae" />
+![CB Nest Logo](./logo.png)
 
 # CB Nest
 
