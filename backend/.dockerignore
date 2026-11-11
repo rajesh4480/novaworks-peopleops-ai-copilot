@@ -1,0 +1,17 @@
+.env
+.venv
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.git/
+.gitignore
+storage/hrms.db
+storage/*.sqlite3
+storage/employee-documents/
+storage/profile-photos/
+storage/hr-policies/
+qdrant_storage/

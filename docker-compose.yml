@@ -1,0 +1,57 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hrms-api
+    env_file:
+      - ./backend/.env
+    environment:
+      PYTHONPATH: /app
+      DATABASE_URL: sqlite+aiosqlite:///./storage/hrms.db
+      POLICY_UPLOAD_DIR: /app/storage/hr-policies
+      EMPLOYEE_DOCUMENT_UPLOAD_DIR: /app/storage/employee-documents
+    volumes:
+      - ./backend:/app
+      - hrms_storage:/app/storage
+      - qdrant_storage:/app/qdrant_storage
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import socket; socket.create_connection(('127.0.0.1', 8000), timeout=5).close()"
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: hrms-web
+    environment:
+      # Browser requests go to the API port exposed on the host.
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+      NEXT_DISABLE_DEVTOOLS: "1"
+    command: sh -c "npm run dev"
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+      - frontend_next:/app/.next
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  hrms_storage:
+  qdrant_storage:
+  frontend_node_modules:
+  frontend_next:

@@ -1,0 +1,11 @@
+{
+  "document": "docs/ai_eval_results.md",
+  "evidence_policy": "Only resolved successful application outcomes and expected security blocks are included. Failed-fetch/debug screenshots are excluded.",
+  "counts": {
+    "policy_rag": 5,
+    "sql_agent": 6,
+    "hr_action_agent": 5,
+    "security_rbac": 7,
+    "langsmith_traces": 3
+  }
+}

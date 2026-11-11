@@ -1,0 +1,20 @@
+# Flexible Work and Office Attendance Policy
+
+**Policy ID:** TEST-HR-2026-07
+
+**Effective Date:** October 24, 2026
+
+## 1. Remote Work Eligibility
+Employees may work remotely for up to four days per week, provided they receive written approval from their department manager.
+
+## 2. Mandatory Office Attendance
+All employees must attend the office every Tuesday and Thursday. These attendance days are mandatory even for employees approved for remote work.
+
+## 3. Availability During Working Hours
+Employees working remotely must be available on the company messaging platform and respond to work-related messages within 30 minutes during normal working hours.
+
+## 4. Schedule Change Requests
+Employees must submit requests to change their regular remote-work schedule at least three business days in advance. The department manager must approve the change in writing.
+
+## 5. Equipment and Security
+Employees must use company-approved devices to access internal HR systems. Employees must not share their login credentials with other people.
